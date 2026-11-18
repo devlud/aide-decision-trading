@@ -1,0 +1,22 @@
+# Fiche d'identité du projet : nom, version, dépendances, réglages des outils.
+
+[project]
+name = "aide-decision-trading"
+version = "0.1.0"
+description = "Aide à la décision pour le trading forex sur MetaTrader 5."
+authors = [{ name = "Ludovic Ravenach" }]
+requires-python = ">=3.10"
+dependencies = []  # bibliothèques ajoutées au fil des étapes
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "ipykernel"]  # outils de travail : tests, style, notebooks
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trading"]  # où se trouve le code (le paquet s'appelle trading)
+
+[tool.ruff]
+line-length = 100
